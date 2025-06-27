@@ -1,0 +1,101 @@
+U-Boot SPL 2025.01-00502-g5350f13b6639 (Jun 26 2025 - 14:32:24 +0000)
+SYSFW ABI: 4.0 (firmware rev 0x000b '11.1.0--v11.01.00 (Fancy Rat)')
+Changed A53 CPU frequency to 1250000000Hz (T grade) in DT
+SPL initial stack usage: 13408 bytes
+Trying to boot from MMC2
+Authentication passed
+Authentication passed
+Authentication passed
+Authentication passed
+Authentication passed
+Starting ATF on ARM64 core...
+
+NOTICE:  BL31: v2.12.0(release):11.00.15-3-g2ab59f45a-dirty
+NOTICE:  BL31: Built : 09:18:24, Jun 23 2025
+
+U-Boot SPL 2025.01-00502-g5350f13b6639 (Jun 26 2025 - 14:32:24 +0000)
+SYSFW ABI: 4.0 (firmware rev 0x000b '11.1.0--v11.01.00 (Fancy Rat)')
+SPL initial stack usage: 1952 bytes
+Trying to boot from MMC2
+Authentication passed
+Authentication passed
+
+
+U-Boot 2025.01-00502-g5350f13b6639 (Jun 26 2025 - 14:32:24 +0000)
+
+SoC:   AM62X SR1.0 HS-FS
+Model: Texas Instruments AM6254xxl SK
+DRAM:  512 MiB
+Core:  79 devices, 32 uclasses, devicetree: separate
+MMC:   mmc@fa00000: 1
+Loading Environment from nowhere... OK
+In:    serial
+Out:   serial
+Err:   serial
+Net:   eth0: ethernet@8000000port@1
+Warning: ethernet@8000000port@2 (eth1) using random MAC address - 92:de:f7:0c:b3:77
+, eth1: ethernet@8000000port@2
+
+Hit any key to stop autoboot:  0
+=> setenv boot_fit 1
+=> run bootcmd_ti_mmc
+22392900 bytes read in 469 ms (45.5 MiB/s)
+## Loading kernel from FIT Image at 90000000 ...
+   Using 'conf-ti_k3-am6254xxl-sk.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'kernel-1' kernel subimage
+     Description:  Linux kernel
+     Created:      2025-06-27   3:45:15 UTC
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x900000e4
+     Data Size:    22323712 Bytes = 21.3 MiB
+     Architecture: AArch64
+     OS:           Linux
+     Load Address: 0x81000000
+     Entry Point:  0x81000000
+     Hash algo:    sha512
+     Hash value:   ac7364f6f0ac830439aba008114d315cb3764ab66944001b2a8c10ff58b3d4530780106c82c1a3d5ce9d0bcdce2416f078b4c1f6e90a9e15b8fe9cd93ed7021f
+   Verifying Hash Integrity ... sha512+ OK
+## Loading fdt from FIT Image at 90000000 ...
+   Using 'conf-ti_k3-am6254xxl-sk.dtb' configuration
+   Verifying Hash Integrity ... OK
+   Trying 'fdt-ti_k3-am6254xxl-sk.dtb' fdt subimage
+     Description:  Flattened Device Tree blob
+     Created:      2025-06-27   3:45:15 UTC
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x9154a41c
+     Data Size:    61044 Bytes = 59.6 KiB
+     Architecture: AArch64
+     Load Address: 0x83000000
+     Hash algo:    sha512
+     Hash value:   2af44d957e1f6ebc0feceff6eee5f81506376da47a6b630bbf9e65094f1b2bbf20d17c3a14f9f2229410659058ac9eaf4bfb3df0ce242436f83a1da616d88696
+   Verifying Hash Integrity ... sha512+ OK
+   Loading fdt from 0x9154a41c to 0x83000000
+   Booting using the fdt blob at 0x83000000
+Working FDT set to 83000000
+   Loading Kernel Image to 81000000
+"Synchronous Abort" handler, esr 0x96000046, far 0x81000000
+elr: 00000000830562b4 lr : 0000000083056374 (reloc)
+elr: 000000009f6562b4 lr : 000000009f656374
+x0 : 0000000081000000 x1 : 00000000900000e4
+x2 : 000000000154a200 x3 : 0000000000000000
+x4 : 0000000081000000 x5 : 000000000000004d
+x6 : 0000000081000000 x7 : 000000009d54b430
+x8 : 0000000001559950 x9 : 00000000ffffffd0
+x10: 0000000000000001 x11: 00000000015598c8
+x12: 000000009d54b398 x13: 0000000090000000
+x14: 00000000ffffffff x15: 000000009d54af8c
+x16: 20d17c3a14f9f222 x17: bf9e65094f1b2bbf
+x18: 000000009d560de0 x19: 0000000004000000
+x20: 0000000081000000 x21: 000000009d54b548
+x22: 0000000000000000 x23: 0000000081000000
+x24: 00000000900000e4 x25: 00000000900000e4
+x26: 00000000900000e4 x27: 0000000081000000
+x28: 000000009155b044 x29: 000000009d54b420
+
+Code: cb030004 cb030021 17fffff0 38636825 (38236885)
+Resetting CPU ...
+
+resetting ...
